@@ -1,0 +1,10 @@
+<h1>Book#index</h1>
+<%= link_to 'new', new_book_path%>
+<%  @books.each do |e|  %>
+    <p>
+         <%= e.inspect %>
+         <%= link_to '编辑', edit_book_path( :id => e.id )%>
+         <%= link_to '详情', book_path( :id => e.id )%>
+         <%= link_to 'Delete', "/book/#{e.id}",:method=>'delete'%>
+    </p>
+<%  end  %>
