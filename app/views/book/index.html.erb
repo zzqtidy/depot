@@ -5,6 +5,6 @@
          <%= e.inspect %>
          <%= link_to '编辑', edit_book_path( :id => e.id )%>
          <%= link_to '详情', book_path( :id => e.id )%>
-         <%= link_to 'Delete', "/book/#{e.id}",:method=>'delete'%>
+         <%= link_to 'Delete', "/book/#{e.id}",data:{:confirm => '确定删除?'},:method=>'delete'%>
     </p>
 <%  end  %>

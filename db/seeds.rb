@@ -54,10 +54,16 @@
 # 							 :image_url => '/images/rtp.jpg',
 # 							 :price => 43.75)
 
-Book.delete_all
-Book.create(:title => 'Ruby On Rails 4 Title',
-                           :name =>'Ruby On Rails 4 Name',
-                           :author =>   'Zhang san')
-Book.create(:title => 'Ruby On Rails 5 Title',
-                           :name =>'Ruby On Rails 5 Name',
-                           :author =>   'Li si')
+# Book.delete_all
+# Book.create(:title => 'Ruby On Rails 4 Title',
+#                            :name =>'Ruby On Rails 4 Name',
+#                            :author =>   'Zhang san')
+# Book.create(:title => 'Ruby On Rails 5 Title',
+#                            :name =>'Ruby On Rails 5 Name',
+#                            :author =>   'Li si')
+
+Article.delete_all
+Article.create(:title => 'Ruby On Rails 4 Title',
+            :content =>'Ruby On Rails 4 Name')
+Article.create(:title => 'Ruby On Rails 5 Title',
+            :content =>'Ruby On Rails 5 Name')
