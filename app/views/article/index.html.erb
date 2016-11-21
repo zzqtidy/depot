@@ -1,7 +1,10 @@
 <h1>Article#index</h1>
-<% link_to %>
+<%= link_to '新建',new_article_path %>
 <% @articles.each do |article| %>
     <p>
       <%= article.inspect %>
+      <%= link_to '详情',article_path(article.id) %>
+      <%= link_to '编辑',edit_article_path(article.id) %>
+      <%= link_to '删除',article_path(article.id),data:{:confirm=>"确定删除?"},:method => 'delete' %>
     </p>
 <% end %>

@@ -1,0 +1,5 @@
+<%= form_for @article,{:url=>article_path} do |f| %>
+    标题：<%= f.text_field :title %>
+    内容：<%= f.text_area :content %>
+    <%= f.submit(value='修改') %>
+<% end %>

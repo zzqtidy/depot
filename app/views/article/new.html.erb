@@ -1,4 +1,5 @@
-<% form_for @articles do |f| %>
-    <%= f.text_field :title %>
-    <%= f.text_area :content %>
+<%= form_for @article,{:url=> article_index_path} do |f| %>
+    标题：<%= f.text_field :title %>
+    内容：<%= f.text_area :content %>
+    <%= f.submit(value='确定') %>
 <% end %>
