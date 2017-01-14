@@ -1,3 +1,4 @@
+
 <h1>Store#index</h1>
 <% if notice %>
 <p id="notice"><%= notice %></p>
@@ -8,7 +9,8 @@
       <h3><%= product.title %></h3>
       <%= sanitize(product.description) %>
       <div class="store_price">
-        <span class="price"><%= product.price %></span>
+        <span class="price"><%= number_to_currency(product.price) %></span>
+        <%= button_to '添加到购物车',line_items_path(:product_id=>product) %>
       </div>
     </div>
 <% end %>
