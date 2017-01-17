@@ -1,11 +1,11 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Carts</h1>
+<h1>购物车</h1>
 
 <table>
   <thead>
     <tr>
-      <th>Id</th>
+      <th>购物车ID</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -14,9 +14,9 @@
     <% @carts.each do |cart| %>
       <tr>
         <td><%= cart.id %></td>
-        <td><%= link_to 'Show', cart %></td>
-        <td><%= link_to 'Edit', edit_cart_path(cart) %></td>
-        <td><%= link_to 'Destroy', cart, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to '查看', cart %></td>
+        <td><%= link_to '编辑', edit_cart_path(cart) %></td>
+        <td><%= link_to '删除', cart, method: :delete, data: { confirm: '确定删除?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -24,4 +24,4 @@
 
 <br>
 
-<%= link_to 'New Cart', new_cart_path %>
+<%= link_to '新建购物车', new_cart_path %>
