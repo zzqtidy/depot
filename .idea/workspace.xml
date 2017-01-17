@@ -420,11 +420,8 @@
       </pane>
       <pane id="Scratches" />
       <pane id="Scope" />
-<<<<<<< HEAD
       <pane id="Scratches" />
-=======
       <pane id="RailsProjectView" />
->>>>>>> c01b041a09d7f60c7c32808f825210212230104f
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -799,19 +796,12 @@
       <workItem from="1480840205312" duration="4162000" />
       <workItem from="1481540544834" duration="4768000" />
       <workItem from="1484359982217" duration="15000" />
-<<<<<<< HEAD
-=======
       <workItem from="1484366967671" duration="62000" />
->>>>>>> c01b041a09d7f60c7c32808f825210212230104f
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-<<<<<<< HEAD
     <option name="totallyTimeSpent" value="35036000" />
-=======
-    <option name="totallyTimeSpent" value="35098000" />
->>>>>>> c01b041a09d7f60c7c32808f825210212230104f
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -826,11 +816,7 @@
     <frame x="0" y="23" width="1280" height="724" extended-state="6" />
     <editor active="false" />
     <layout>
-<<<<<<< HEAD
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26009694" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-=======
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26332796" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
->>>>>>> c01b041a09d7f60c7c32808f825210212230104f
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3292683" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32842416" sideWeight="0.503231" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3078125" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
