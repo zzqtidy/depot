@@ -5,38 +5,55 @@ class LineItemsController < ApplicationController
   # GET /line_items.json
   def index
     @line_items = LineItem.all
+    @cart=current_cart
   end
 
   # GET /line_items/1
   # GET /line_items/1.json
   def show
+    @cart=current_cart
   end
 
   # GET /line_items/new
   def new
     @line_item = LineItem.new
+    @cart=current_cart
   end
 
   # GET /line_items/1/edit
   def edit
+    @cart=current_cart
   end
 
   # POST /line_items
   # POST /line_items.json
   def create
     @cart=current_cart
-    @product=Product.find(line_item_params[:product_id]);
-    # @line_item=@cart.line_item.build(:product=>product)
-    @line_item=@cart.add_product(@product.id);
-    respond_to do |format|
-      if @line_item.save
-        format.html{redirect_to(@line_item,:notice => 'Line Item 创建成功')}
-        format.xml{render :xml=>@line_item,:status => :created,:location => @line_item}
-      else
-        format.html{render :action => 'new'}
-        format.xml{render :xml=>@line_item.errors,:status => :unprocessable_entity}
+    begin
+      # store添加到购物车
+      @product=Product.find(params[:product_id]);
+    rescue ActiveRecord::RecordNotFound
+      #购物车列表中添加时由于传递的param是line_item,所以用下面的方式获取
+      begin
+        @product=Product.find(line_item_params[:product_id]);
+      rescue ActiveRecord::RecordNotFound
+        logger.error '无效的购物车商品请求 #{line_item_params[:product_id]}'
+        redirect_to line_items_path, :notice=>'没有对应的商品'
+      end
+    else
+      # @line_item=@cart.line_item.build(:product=>product)
+      @line_item=@cart.add_product(@product.id);
+      respond_to do |format|
+        if @line_item.save
+          format.html{redirect_to(store_path,:notice => 'Line Item 创建成功')}
+          format.xml{render :xml=>@line_item,:status => :created,:location => @line_item}
+        else
+          format.html{render :action => 'new'}
+          format.xml{render :xml=>@line_item.errors,:status => :unprocessable_entity}
+        end
       end
     end
+
   end
 
   # PATCH/PUT /line_items/1
@@ -56,7 +73,6 @@ class LineItemsController < ApplicationController
   # DELETE /line_items/1
   # DELETE /line_items/1.json
   def destroy
-    puts "aaaaaaa:#{params[:id]}"
     @line_item.destroy
     # LineItem.find(params[:id]).destroy;
     respond_to do |format|

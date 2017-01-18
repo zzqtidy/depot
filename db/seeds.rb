@@ -62,8 +62,13 @@
 #                            :name =>'Ruby On Rails 5 Name',
 #                            :author =>   'Li si')
 
-Article.delete_all
-Article.create(:title => 'Ruby On Rails 4 Title',
-            :content =>'Ruby On Rails 4 Name')
-Article.create(:title => 'Ruby On Rails 5 Title',
-            :content =>'Ruby On Rails 5 Name')
+# Article.delete_all
+# Article.create(:title => 'Ruby On Rails 4 Title',
+#             :content =>'Ruby On Rails 4 Name')
+# Article.create(:title => 'Ruby On Rails 5 Title',
+#             :content =>'Ruby On Rails 5 Name')
+
+
+LineItem.delete_all;
+LineItem.create(:product_id=>1,:cart_id=>18,:quantity=>1)
+LineItem.create(:product_id=>1,:cart_id=>18,:quantity=>1)

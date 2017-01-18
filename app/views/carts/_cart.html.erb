@@ -1,0 +1,22 @@
+<p id="notice"><%= notice %></p>
+<h2>购物车详情</h2>
+<div id="store" class="cart_title">
+  <table>
+    <tr>
+      <th>产品</th>
+      <th>数量</th>
+      <th>单价</th>
+      <th>总价</th>
+    </tr>
+    <%= render(@cart.line_item) %>
+    <tr class="total_line">
+      <td colspan="3"></td>
+      <td class="total_cell"><%= number_to_currency(@cart.total_price) %></td>
+    </tr>
+  </table>
+</div>
+
+
+<%= link_to '编辑', edit_cart_path(@cart) %> |
+<%= link_to '返回', carts_path %>
+<%= button_to '清空购物车',@cart,:method=>:delete,:confirm=>'确认删除？' %>
