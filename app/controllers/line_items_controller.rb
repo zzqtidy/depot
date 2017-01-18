@@ -25,8 +25,9 @@ class LineItemsController < ApplicationController
   # POST /line_items.json
   def create
     @cart=current_cart
-    product=Product.find(params[:product_id])
-    @line_item=@cart.line_item.build(:product=>product)
+    @product=Product.find(line_item_params[:product_id]);
+    # @line_item=@cart.line_item.build(:product=>product)
+    @line_item=@cart.add_product(@product.id);
     respond_to do |format|
       if @line_item.save
         format.html{redirect_to(@line_item,:notice => 'Line Item 创建成功')}
@@ -43,7 +44,7 @@ class LineItemsController < ApplicationController
   def update
     respond_to do |format|
       if @line_item.update(line_item_params)
-        format.html { redirect_to @line_item, notice: 'Line item was successfully updated.' }
+        format.html { redirect_to @line_item, notice: '购物车明细更新成功.' }
         format.json { render :show, status: :ok, location: @line_item }
       else
         format.html { render :edit }
@@ -55,9 +56,11 @@ class LineItemsController < ApplicationController
   # DELETE /line_items/1
   # DELETE /line_items/1.json
   def destroy
+    puts "aaaaaaa:#{params[:id]}"
     @line_item.destroy
+    # LineItem.find(params[:id]).destroy;
     respond_to do |format|
-      format.html { redirect_to line_items_url, notice: 'Line item was successfully destroyed.' }
+      format.html { redirect_to line_items_url, notice: '购物车明细删除成功.' }
       format.json { head :no_content }
     end
   end

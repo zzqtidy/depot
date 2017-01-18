@@ -1,5 +1,5 @@
 <div id="product_list">
-  <h1>Listing products</h1>
+  <h1>产品列表</h1>
 
   <table>
     <% @products.each do |product| %>
@@ -18,9 +18,9 @@
           </td>
 
           <td class="list_actions">
-            <%= link_to 'Show', product %><br/>
-            <%= link_to 'Edit', edit_product_path(product) %><br/>
-            <%= link_to 'Destroy', product,
+            <%= link_to '查看', product %><br/>
+            <%= link_to '编辑', edit_product_path(product) %><br/>
+            <%= link_to '删除', product,
                         data:{:confirm => 'Are you sure?'},
                         :method => :delete %>
           </td>
@@ -31,4 +31,4 @@
 
 <br />
 
-<%= link_to 'New product', new_product_path %>
+<%= link_to '新建产品', new_product_path %>

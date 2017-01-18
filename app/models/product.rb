@@ -14,7 +14,7 @@ class Product < ApplicationRecord
     if line_items.empty?
       return true
     else
-      errors.add(:base,'Line Items Present')
+      errors.add(:base,'购物车明细不为空')
     end
   end
 end

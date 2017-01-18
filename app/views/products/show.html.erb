@@ -1,24 +1,24 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Title:</strong>
+  <strong>标题:</strong>
   <%= @product.title %>
 </p>
 
 <p>
-  <strong>Description:</strong>
+  <strong>描述:</strong>
   <%= @product.description %>
 </p>
 
 <p>
-  <strong>Image url:</strong>
+  <strong>图片路径:</strong>
   <%= @product.image_url %>
 </p>
 
 <p>
-  <strong>Price:</strong>
+  <strong>价格:</strong>
   <%= @product.price %>
 </p>
 
-<%= link_to 'Edit', edit_product_path(@product) %> |
-<%= link_to 'Back', products_path %>
+<%= link_to '编辑', edit_product_path(@product) %> |
+<%= link_to '返回', products_path %>
